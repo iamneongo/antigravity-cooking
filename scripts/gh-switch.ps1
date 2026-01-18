@@ -155,9 +155,9 @@ function Switch-Account($Alias) {
         } else {
             $existingContent = $existingContent.Trim() + "`n`n" + $sshBlock
         }
-        $existingContent | Out-File $SSH_CONFIG -Encoding utf8
+        $existingContent | Out-File $SSH_CONFIG -Encoding Ascii
     } else {
-        $sshBlock | Out-File $SSH_CONFIG -Encoding utf8
+        $sshBlock | Out-File $SSH_CONFIG -Encoding Ascii
     }
 
     Write-Host "SUCCESS: Switched to $($target.Alias)!" -ForegroundColor Green
